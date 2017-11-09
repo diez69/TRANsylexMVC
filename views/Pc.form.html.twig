@@ -1,0 +1,20 @@
+<h2>Formulaire</h2>
+
+{% if Pc is defined %}
+<form method="post" name="formulaire" action="{{ url('Pc.save', {id: Pc.id}) }}">
+
+    <input type="hidden" name="id" value={{Pc.id}} />
+
+    <label for="marque">marque : </label>
+    <input type="text" name="marque" value={{Pc.marque}} />
+
+    {% else %}
+<form method="post" name="formulaire" action="{{ url('Pc.save') }}">
+    <label for="name">Marque : </label>
+    <input type="text" name="marque" />
+    
+    {% endif %}
+
+    <button type="submit">Envoyer</button>
+
+</form>

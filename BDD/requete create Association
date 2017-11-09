@@ -1,0 +1,10 @@
+CREATE TABLE `Association` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `idUser` int(11) unsigned NOT NULL,
+  `idPc` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `foreignkey_pc` (`idPc`),
+  KEY `foreignkey_user` (`idUser`),
+  CONSTRAINT `foreignkey_pc` FOREIGN KEY (`idPc`) REFERENCES `pc` (`id`),
+  CONSTRAINT `foreignkey_user` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;

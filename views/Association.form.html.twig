@@ -1,0 +1,24 @@
+<h2>Formulaire</h2>
+
+{% if assoc is defined %}
+<form method="post" name="formulaire" action="{{ url('association.save', {id: assoc.id}) }}">
+    <input type="hidden" name="id" value={{assoc.user.id}} />
+
+    <label for="name">IdUser : </label>
+    <input type="text" name="idUser" value={{assoc.user.id}} />
+
+    <label for="name">IdPC : </label>
+    <input type="text" name="idPc" value={{assoc.Pc.id}}  />
+
+
+    {% else %}
+    <form method="post" name="formulaire" action="{{ url('association.save') }}">
+        <label for="name">IdUser : </label>
+        <input type="text" name="assoc.user.id"/>
+        <label for="name">IdPc : </label>
+        <input type="text" name="assoc.pc.id"/>
+        {% endif %}
+
+        <button type="submit">Envoyer</button>
+
+    </form>

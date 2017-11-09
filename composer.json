@@ -1,0 +1,28 @@
+{
+    "require": {
+        "silex/silex": "~2.0",
+        "twig/twig": "^1.24",
+        "symfony/twig-bridge": "^3.1",
+         "doctrine/dbal": "^2.5"
+    },
+    "scripts": {
+      "run": [
+        "echo 'Started web server on http://localhost:8000'",
+        "php -S 0.0.0.0:8000 -t web web/index.php"
+      ]
+    },
+    "autoload": {
+       "psr-4": {
+         "App\\Users\\Controller\\": "src/Users/Controller/",
+         "App\\Users\\Repository\\": "src/Users/Repository/",
+         "App\\Users\\Entity\\": "src/Users/Entity/",
+         "App\\Pc\\Controller\\": "src/Pc/Controller/",
+         "App\\Pc\\Repository\\": "src/Pc/Repository/",
+         "App\\Pc\\Entity\\": "src/Pc/Entity/",
+         "App\\Association\\Controller\\": "src/Association/Controller/",
+         "App\\Association\\Repository\\": "src/Association/Repository/",
+         "App\\Association\\Entity\\": "src/Association/Entity/"
+
+       }
+   }
+}
